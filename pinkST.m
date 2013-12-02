@@ -41,3 +41,14 @@ for tidx = 1:T
     mov(:,:,tidx) = real(ifft2(ifftshift(F(:,:,tidx))));
     
 end
+
+% play the movie
+figure(1);
+colormap gray;
+
+for tidx = 1:size(mov,3) 
+    imagesc(mov(:,:,tidx));
+    pause(0.15);
+    title(tidx);
+    drawnow;
+end
